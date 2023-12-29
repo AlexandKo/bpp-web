@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/bpp-web/static/css/main.e6c13ad2.css",
-    "main.js": "/bpp-web/static/js/main.6bd75bfc.js",
+    "main.js": "/bpp-web/static/js/main.1d699d29.js",
     "static/media/neste.ico": "/bpp-web/static/media/neste.c5504a41207c843425d1.ico",
     "static/media/flag_Lithuania.ico": "/bpp-web/static/media/flag_Lithuania.95bdc3b14e970649c48a.ico",
     "static/media/flag_Latvia.ico": "/bpp-web/static/media/flag_Latvia.27ebf813b061920136c9.ico",
     "static/media/circlek.ico": "/bpp-web/static/media/circlek.8d82ba9b5c7323652835.ico",
     "index.html": "/bpp-web/index.html",
     "main.e6c13ad2.css.map": "/bpp-web/static/css/main.e6c13ad2.css.map",
-    "main.6bd75bfc.js.map": "/bpp-web/static/js/main.6bd75bfc.js.map"
+    "main.1d699d29.js.map": "/bpp-web/static/js/main.1d699d29.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.6bd75bfc.js"
+    "static/js/main.1d699d29.js"
   ]
 }
