@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import CircleKIcon from './../../resources/circlek.ico';
 import { getPetrolData } from '../../api/PetrolApi';
-import Progress from '../../util/Progress';
+import Progress from '../../base/Progress';
 import CircleKResult from './CircleKResult';
 
 const urls = [
@@ -27,6 +27,7 @@ const CircleK = ({ country, setError, setErrorDescription }) => {
             getPetrolData(setError, setErrorDescription, setExpanded, setLoad, setStationData, link);
         };
         if (isExpanded === false) {
+            setLoad(false);
             setStationData(undefined);
         }
         setExpanded(isExpanded ? panel : false);
@@ -41,7 +42,7 @@ const CircleK = ({ country, setError, setErrorDescription }) => {
                     id="panel1bh-header"
                 >
                     <Typography component='span' sx={{ width: '33%', flexShrink: 0 }}>
-                        <img src={CircleKIcon} alt='CircleK' width='20' /> &ensp; CircleK Petrol Station
+                        <img src={CircleKIcon} alt='CircleK' width='20' /> &ensp; CircleK Petrol
                         {load && <Progress />}
                     </Typography>
                 </AccordionSummary>

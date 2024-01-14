@@ -1,8 +1,6 @@
 {
   "name": "bpp-web",
   "version": "0.1.0",
-  "homepage": "https://alexandko.github.io/bpp-web/",
-  "proxy": "https://212.142.94.197:65500/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.3",
@@ -17,12 +15,13 @@
     "gh-pages": "^6.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-google-charts": "^4.0.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -deploy",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

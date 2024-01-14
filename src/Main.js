@@ -64,7 +64,7 @@ const Main = () => {
 
     return (
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <Box sx={{ width: '50%', height: '50%' }}>
+            <Box sx={{ width: '55%', height: '50%' }}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
                         <Tab icon={flagLatvia()} iconPosition="start" label="Latvia" {...a11yProps(0)} />

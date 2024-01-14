@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import GotikaIcon from './../../resources/gotika.png';
 import { getPetrolData } from '../../api/PetrolApi';
-import Progress from '../../util/Progress';
+import Progress from '../../base/Progress';
 import GotikaResult from './GotikaResult';
 
 const GotikaLV = ({ setError, setErrorDescription }) => {
@@ -21,6 +21,7 @@ const GotikaLV = ({ setError, setErrorDescription }) => {
             getPetrolData(setError, setErrorDescription, setExpanded, setLoad, setStationData, '/lv/petrol/gotika');
         };
         if (isExpanded === false) {
+            setLoad(false);
             setStationData(undefined);
         }
         setExpanded(isExpanded ? panel : false);
@@ -35,7 +36,7 @@ const GotikaLV = ({ setError, setErrorDescription }) => {
                     id="panel1bh-header"
                 >
                     <Typography component='span' sx={{ width: '45%', flexShrink: 0 }}>
-                        <img src={GotikaIcon} alt='Gotika' width='20' /> &ensp; Gotika Auto Petrol Station
+                        <img src={GotikaIcon} alt='Gotika' width='20' /> &ensp; Gotika Auto Petrol
                         {load && <Progress />}
                     </Typography>
                 </AccordionSummary>

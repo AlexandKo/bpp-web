@@ -1,4 +1,4 @@
-import FillingStationLogo from './../../util/FillingStationLogo';
+import FillingStationLogo from './../../base/FillingStationLogo';
 
 const NesteResult = ({ stationData }) => {
     return (

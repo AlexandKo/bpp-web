@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ViadaIcon from './../../resources/viada.png';
 import { getPetrolData } from '../../api/PetrolApi';
-import Progress from '../../util/Progress';
+import Progress from '../../base/Progress';
 import ViadaResult from './ViadaResult';
 
 const ViadaLV = ({ setError, setErrorDescription }) => {
@@ -20,6 +20,7 @@ const ViadaLV = ({ setError, setErrorDescription }) => {
             getPetrolData(setError, setErrorDescription, setExpanded, setLoad, setStationData, '/lv/petrol/viada');
         };
         if (isExpanded === false) {
+            setLoad(false);
             setStationData(undefined);
         }
         setExpanded(isExpanded ? panel : false);
@@ -34,7 +35,7 @@ const ViadaLV = ({ setError, setErrorDescription }) => {
                     id="panel1bh-header"
                 >
                     <Typography component='span' sx={{ width: '33%', flexShrink: 0 }}>
-                        <img src={ViadaIcon} alt='Viada' width='20' /> &ensp; Viada Petrol Station
+                        <img src={ViadaIcon} alt='Viada' width='20' /> &ensp; Viada Petrol
                         {load && <Progress />}
                     </Typography>
                 </AccordionSummary>

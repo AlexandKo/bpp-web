@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import VirshiIcon from './../../resources/virshi.png';
 import { getPetrolData } from '../../api/PetrolApi';
-import Progress from '../../util/Progress';
+import Progress from '../../base/Progress';
 import VirshiResult from './VirshiResult';
 
 const VirshiLV = ({ setError, setErrorDescription }) => {
@@ -20,6 +20,7 @@ const VirshiLV = ({ setError, setErrorDescription }) => {
             getPetrolData(setError, setErrorDescription, setExpanded, setLoad, setStationData, '/lv/petrol/virsi');
         };
         if (isExpanded === false) {
+            setLoad(false);
             setStationData(undefined);
         }
         setExpanded(isExpanded ? panel : false);
@@ -34,7 +35,7 @@ const VirshiLV = ({ setError, setErrorDescription }) => {
                     id="panel1bh-header"
                 >
                     <Typography component='span' sx={{ width: '33%', flexShrink: 0 }}>
-                        <img src={VirshiIcon} alt='Virsi' width='20' /> &ensp; Virshi Petrol Station
+                        <img src={VirshiIcon} alt='Virsi' width='20' /> &ensp; Virshi Petrol
                         {load && <Progress />}
                     </Typography>
                 </AccordionSummary>
