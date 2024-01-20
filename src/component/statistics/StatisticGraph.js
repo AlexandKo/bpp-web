@@ -2,7 +2,7 @@ import { Chart } from "react-google-charts";
 
 export const options = {
     chart: {
-        title: "Petrol Price last 5 days",
+        title: "Petrol Price statistics",
         subtitle: "in EUR per liter",
     },
 };
@@ -33,7 +33,6 @@ export const createStatisticData = (stationStatistic, fuelList) => {
         if (element?.dieselEcto !== undefined) {
             tempData.push(element.dieselEcto);
         }
-        console.log(tempData)
         data.push(tempData);
     });
     return data;
@@ -46,7 +45,7 @@ const StatisticGraph = ({ stationData, fuelList }) => {
     return (
         <>
             <Chart
-                chartType="Bar"
+                chartType="Line"
                 width="95%"
                 height="400px"
                 data={data}

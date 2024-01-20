@@ -43,7 +43,7 @@ export default function StationSelect({ setError,
         setFuelList(stationFuelList);
     };
     return (
-        <div>
+        <>
             <FormControl sx={{ m: 1, minWidth: 400 }}>
                 <InputLabel htmlFor='all-stations'>Petrol Stations</InputLabel>
                 <Select defaultValue=''
@@ -64,6 +64,6 @@ export default function StationSelect({ setError,
             {stationData && <StatisticGraph
                 stationData={stationData} 
                 fuelList={fuelList}/>}
-        </div>
+        </>
     );
 }
