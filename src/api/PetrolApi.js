@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const getPetrolData = async (setError, setErrorDescription, setExpanded, setLoad, setStationData, serviceUrl) => {
     await axios
-        .get(process.env.REACT_APP_BASE_URL + serviceUrl)
+        .get(process.env.REACT_APP_BASE_API_URL + serviceUrl)
         .then(res => {
             setLoad(false);
             const id = res.data.id;
