@@ -12,6 +12,7 @@ import ViadaLV from "./component/viada/ViadaLV";
 import VirshiLV from "./component/virshi/VirshiLV";
 import Alert from '@mui/material/Alert';
 import Statistics from "./component/statistics/Statistics";
+import Stats from  "./resources/stats.ico";
 
 function a11yProps(index) {
     return {
@@ -53,6 +54,12 @@ const flagLithuania = () => {
     );
 }
 
+const statisticIcon = () => {
+    return (
+        <img src={Stats} alt='Statistics' width='20' />
+    );
+}
+
 const Main = () => {
     const [value, setValue] = useState(0);
     const [error, setError] = useState(false);
@@ -69,7 +76,7 @@ const Main = () => {
                     <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
                         <Tab icon={flagLatvia()} iconPosition="start" label="Latvia" {...a11yProps(0)} />
                         <Tab icon={flagLithuania()} iconPosition="start" label="Lithuania" {...a11yProps(1)} />
-                        <Tab label="Statistics" {...a11yProps(2)} />
+                        <Tab icon={statisticIcon()} iconPosition="start" label="Statistics" {...a11yProps(2)} />
                     </Tabs>
                 </Box>
                 <CustomTabPanel value={value} index={0}>
