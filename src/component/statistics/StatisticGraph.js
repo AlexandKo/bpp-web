@@ -9,7 +9,6 @@ export const options = {
 
 export const createStatisticData = (stationStatistic, fuelList) => {
     let data = [fuelList];
-    console.log(data)
 
     stationStatistic.forEach(element => {
         let tempData = [];

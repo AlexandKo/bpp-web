@@ -5,6 +5,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import FlagLatvia from './resources/flag_Latvia.ico';
 import FlagLithuania from './resources/flag_Lithuania.ico';
+import FlagSweden from './resources/flag_Sweden.ico';
 import NesteLV from "./component/neste/NesteLV";
 import CircleK from "./component/circlek/CircleK";
 import GotikaLV from "./component/gotika/GotikaLV";
@@ -50,7 +51,13 @@ const flagLatvia = () => {
 
 const flagLithuania = () => {
     return (
-        <img src={FlagLithuania} alt='Latvia' width='20' />
+        <img src={FlagLithuania} alt='Lithuania' width='20' />
+    );
+}
+
+const flagSweden = () => {
+    return (
+        <img src={FlagSweden} alt='Sweden' width='20' />
     );
 }
 
@@ -76,6 +83,7 @@ const Main = () => {
                     <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
                         <Tab icon={flagLatvia()} iconPosition="start" label="Latvia" {...a11yProps(0)} />
                         <Tab icon={flagLithuania()} iconPosition="start" label="Lithuania" {...a11yProps(1)} />
+                        <Tab icon={flagSweden()} iconPosition="start" label="Sweden" {...a11yProps(1)} />
                         <Tab icon={statisticIcon()} iconPosition="start" label="Statistics" {...a11yProps(2)} />
                     </Tabs>
                 </Box>
@@ -104,6 +112,12 @@ const Main = () => {
                         setErrorDescription={setErrorDescription} />
                 </CustomTabPanel>
                 <CustomTabPanel value={value} index={2}>
+                    <CircleK
+                        country='SE'
+                        setError={setError}
+                        setErrorDescription={setErrorDescription} />
+                </CustomTabPanel>
+                <CustomTabPanel value={value} index={3}>
                     <Statistics
                         setError={setError}
                         setErrorDescription={setErrorDescription} />

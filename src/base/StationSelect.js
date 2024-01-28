@@ -58,6 +58,8 @@ export default function StationSelect({ setError,
                     <MenuItem value={5}>Virshi Petrol Station</MenuItem>
                     <ListSubheader>Lithuania</ListSubheader>
                     <MenuItem value={6}>CircleK Petrol Station</MenuItem>
+                    <ListSubheader>Sweden</ListSubheader>
+                    <MenuItem value={7}>CircleK Petrol Station</MenuItem>
                 </Select>
             </FormControl>
             {load && <Progress />}

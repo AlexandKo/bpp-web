@@ -11,7 +11,8 @@ import CircleKResult from './CircleKResult';
 
 const urls = [
     { id: 'LV', url: '/lv/petrol/circlek' },
-    { id: 'LT', url: '/lt/petrol/circlek' }
+    { id: 'LT', url: '/lt/petrol/circlek' },
+    { id: 'SE', url: '/se/petrol/circlek' }
 ];
 
 const CircleK = ({ country, setError, setErrorDescription }) => {
