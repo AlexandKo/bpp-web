@@ -49,7 +49,7 @@ const CircleK = ({ country, setError, setErrorDescription }) => {
                 </AccordionSummary>
                 <AccordionDetails component='span'>
                     <Typography component='span'>
-                        {stationData && <CircleKResult stationData={stationData} />}
+                        {stationData && <CircleKResult country={country} stationData={stationData} />}
                     </Typography>
                 </AccordionDetails>
             </Accordion>

@@ -32,7 +32,7 @@ export const createStatisticData = (stationStatistic, fuelList) => {
         if (element?.dieselEcto !== undefined) {
             tempData.push(element.dieselEcto);
         }
-        data.push(tempData);
+        data.push(tempData.filter(x => x != null));
     });
     return data;
 };

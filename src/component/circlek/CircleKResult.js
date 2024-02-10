@@ -1,6 +1,6 @@
 import FillingStationLogo from '../../base/FillingStationLogo';
 
-const CircleKResult = ({ stationData }) => {
+const CircleKResult = ({ country, stationData }) => {
     return (
         <div>
             <table style={{ borderCollapse: 'collapse', width: '100%', fontSize: '13px', textAlign: 'left' }}>
@@ -53,6 +53,46 @@ const CircleKResult = ({ stationData }) => {
                     </tr>
                 </tbody>
             </table>
+            {country === 'SE' &&
+                <>
+                    <br />
+                    <p>Current prices automatic stations</p>
+                    <table style={{ borderCollapse: 'collapse', width: '100%', fontSize: '13px', textAlign: 'left' }}>
+                        <tbody>
+                            <tr>
+                                <th></th>
+                                <th>Fuel</th>
+                                <th>Price</th>
+                                <th>Best Price</th>
+                            </tr>
+                            <tr style={{ border: '1px solid #dddddd' }}>
+                                <td style={{ width: '25px' }}>
+                                    <FillingStationLogo fillColor='green' />
+                                </td>
+                                <td style={{ width: '95px' }}>miles 95</td>
+                                <td style={{ width: '65px' }}>{stationData.petrolAutomatic} &ensp;</td>
+                                <td>{stationData.petrolBestPriceAddress}</td>
+                            </tr>
+                            <tr style={{ border: '1px solid #dddddd' }}>
+                                <td>
+                                    <FillingStationLogo fillColor='green' />
+                                </td>
+                                <td>milesPLUS 98</td>
+                                <td>{stationData.petrolProAutomatic} &ensp;</td>
+                                <td>{stationData.petrolProBestPriceAddress}</td>
+                            </tr>
+                            <tr style={{ border: '1px solid #dddddd' }}>
+                                <td>
+                                    <FillingStationLogo fillColor='black' />
+                                </td>
+                                <td>miles D</td>
+                                <td>{stationData.dieselAutomatic} &ensp;</td>
+                                <td>{stationData.dieselBestPriceAddress}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </>
+            }
         </div>
     );
 }
