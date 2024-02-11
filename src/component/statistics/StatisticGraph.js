@@ -11,33 +11,19 @@ export const createStatisticData = (stationStatistic, fuelList) => {
     let data = [fuelList];
 
     stationStatistic.forEach(element => {
-        let tempData = [];
-        const fullDate = new Date(element.createdDate);
-        const month = fullDate.getMonth() === 0 ? '1' : fullDate.getMonth();
-
-        tempData.push(`${fullDate.getFullYear()}-${month}-${fullDate.getDate()}`);
-        if (element?.petrol !== undefined) {
-            tempData.push(element.petrol);
-        }
-        if (element?.petrolEcto !== undefined) {
-            tempData.push(element.petrolEcto);
-        }
-        if (element?.petrolPro !== undefined) {
-            tempData.push(element.petrolPro);
-        }
-        tempData.push(element.diesel);
-        if (element?.dieselPro !== undefined) {
-            tempData.push(element.dieselPro);
-        }
-        if (element?.dieselEcto !== undefined) {
-            tempData.push(element.dieselEcto);
-        }
+        const tempData = [
+            new Date(element.createdDate).toISOString().split('T')[0],
+            element?.petrol !== undefined ? element.petrol : null,
+            element?.petrolEcto !== undefined ? element.petrolEcto : null,
+            element?.petrolPro !== undefined ? element.petrolPro : null,
+            element?.diesel !== undefined ? element.diesel : null,
+            element?.dieselPro !== undefined ? element.dieselPro : null,
+            element?.dieselEcto !== undefined ? element.dieselEcto : null
+        ];
         data.push(tempData.filter(x => x != null));
     });
     return data;
 };
-
-
 
 const StatisticGraph = ({ stationData, fuelList }) => {
     const data = createStatisticData(stationData.stationStatistic, fuelList);
